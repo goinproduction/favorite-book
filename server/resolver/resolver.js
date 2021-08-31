@@ -1,4 +1,6 @@
 const { books, authors } = require('../data/static');
+const Book = require('../model/Book');
+const Author = require('../model/Author');
 
 const resolver = {
     // QUERY
@@ -20,8 +22,14 @@ const resolver = {
 
     // MUTATION
     Mutation: {
-        createAuthor: (parent, args) => args,
-        createBook: (parent, args) => args,
+        createAuthor: async (parent, args) => {
+            const newAuthor = new Author(args);
+            return await newAuthor.save();
+        },
+        createBook: async (parent, args) => {
+            const newBook = new Book(args);
+            return await newBook.save();
+        },
     },
 };
 

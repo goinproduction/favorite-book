@@ -9,7 +9,7 @@ const BookSchema = new Schema({
         type: String,
     },
     authorId: {
-        type: Number,
+        type: String,
     },
 });
 
