@@ -17,5 +17,7 @@ server.applyMiddleware({
 });
 
 app.listen({ PORT: 4000 }, () =>
-    console.log('Server is starting at http://localhost:4000')
+    console.log(
+        `Server is starting at http://localhost:4000/${server.graphqlPath}`
+    )
 );
