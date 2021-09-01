@@ -33,7 +33,7 @@ const Forms = () => {
     };
 
     const { loading, data } = useQuery(getAuthors);
-    const [addBook, dataMutation] = useMutation(addSingleBook);
+    const [addBook] = useMutation(addSingleBook);
     return (
         <Row>
             <Col>
