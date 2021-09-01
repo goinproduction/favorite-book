@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import CardColumns from 'react-bootstrap/CardColumns';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import BookDetails from './BookDetails';
 
 const BookList = () => {
     return (
@@ -46,7 +47,9 @@ const BookList = () => {
                     </Card>
                 </CardColumns>
             </Col>
-            <Col></Col>
+            <Col>
+                <BookDetails />
+            </Col>
         </Row>
     );
 };
