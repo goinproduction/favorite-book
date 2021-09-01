@@ -7,15 +7,13 @@ const BookDetails = () => {
             <Card.Body>
                 <Card.Title>Ky nghe lay tay</Card.Title>
                 <Card.Subtitle>Phong su</Card.Subtitle>
-                <Card.Text>
-                    <p>Vu Trong Phung</p>
-                    <p>Age: 90</p>
-                    <p>All books</p>
-                    <ul>
-                        <li>Ky nghe lay tay</li>
-                        <li>So do</li>
-                    </ul>
-                </Card.Text>
+                <p>Vu Trong Phung</p>
+                <p>Age: 90</p>
+                <p>All books</p>
+                <ul>
+                    <li>Ky nghe lay tay</li>
+                    <li>So do</li>
+                </ul>
             </Card.Body>
         </Card>
     );
