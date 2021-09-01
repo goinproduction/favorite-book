@@ -27,3 +27,12 @@ export const getSingleBook = gql`
         }
     }
 `;
+
+export const getAuthors = gql`
+    query getAuthorsQuery {
+        authors {
+            id
+            name
+        }
+    }
+`;

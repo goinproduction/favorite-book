@@ -26,7 +26,7 @@ const BookDetails = ({ bookId }) => {
                         <Card.Title>{book.name}</Card.Title>
                         <Card.Subtitle>{book.genre}</Card.Subtitle>
                         <p>{book.author.name}</p>
-                        <p>{book.author.age}</p>
+                        <p>Age: {book.author.age}</p>
                         <p>All book written by {book.author.name}</p>
                         <ul>
                             {book.author.books.map((book) => (
