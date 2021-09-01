@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 import { useQuery } from '@apollo/client';
-import { getSingleBook } from '../apollo-client/queries';
+import { getSingleBook } from '../graphql-client/queries';
 
 const BookDetails = ({ bookId }) => {
     const { loading, error, data } = useQuery(getSingleBook, {

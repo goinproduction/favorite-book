@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 import BookDetails from './BookDetails';
 
 import { useQuery } from '@apollo/client';
-import { getBooks } from '../apollo-client/queries';
+import { getBooks } from '../graphql-client/queries';
 const BookList = () => {
     const [bookSelected, setBookSelected] = useState(null);
 

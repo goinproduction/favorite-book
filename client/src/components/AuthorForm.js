@@ -34,9 +34,7 @@ const AuthorForm = () => {
     };
 
     // GraphQL operations
-    const [addAuthor, dataMutation] = useMutation(addSingleAuthor);
-
-    // console.log(dataMutation)
+    const [addAuthor] = useMutation(addSingleAuthor);
 
     return (
         <Form onSubmit={onSubmit}>
