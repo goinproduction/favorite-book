@@ -8,12 +8,13 @@ const BookDetails = ({ bookId }) => {
         variables: {
             id: bookId,
         },
+        skip: bookId === null,
     });
 
     if (loading) return <p>Loading book details...</p>;
-    if (bookId !== null && error) return <p>Error loading details</p>;
+    if (error) return <p>Error loading details</p>;
 
-    const book = !loading && !error ? data.book : null;
+    const book = bookId !== null ? data.book : null;
 
     return (
         <Card bg='info' text='white' className='shadow'>
