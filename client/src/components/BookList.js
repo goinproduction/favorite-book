@@ -23,6 +23,7 @@ const BookList = () => {
                             border='info'
                             text='info'
                             className='text-center shadow'
+                            key={book.id}
                         >
                             <Card.Body>{book.name}</Card.Body>
                         </Card>
