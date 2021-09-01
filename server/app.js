@@ -15,7 +15,7 @@ const connectToDatabase = async () => {
     try {
         await mongoose.connect(
             `mongodb+srv://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@cluster0.ocnkw.mongodb.net/book-manager?retryWrites=true&w=majority`,
-            (err) => {
+            (err) => { 
                 if (err) throw err;
                 console.log('connected to MongoDB');
             }
