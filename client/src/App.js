@@ -1,5 +1,6 @@
 import Container from 'react-bootstrap/Container';
 import BookList from './components/BookList';
+import Forms from './components/Forms';
 
 function App() {
     return (
@@ -9,6 +10,8 @@ function App() {
         >
             <h1 className='text-center text-info mb-3'>Book Manager</h1>
             <hr />
+            <hr />
+            <Forms />
             <hr />
             <BookList />
         </Container>
