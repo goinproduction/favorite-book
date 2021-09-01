@@ -1,11 +1,12 @@
 const { books, authors } = require('../data/static');
-const Book = require('../model/Book');
-const Author = require('../model/Author');
+const Book = require('../models/Book');
+const Author = require('../models/Author');
 
 const resolver = {
     // QUERY
     Query: {
-        books: () => books,
+        books: async (parent, args, { mongoDataMethods }) =>
+            await mongoDataMethods.getAllBooks(),
         book: (parent, args) => books.find((book) => book.id == args.id),
         authors: () => authors,
         author: (parent, args) =>
@@ -22,14 +23,10 @@ const resolver = {
 
     // MUTATION
     Mutation: {
-        createAuthor: async (parent, args) => {
-            const newAuthor = new Author(args);
-            return await newAuthor.save();
-        },
-        createBook: async (parent, args) => {
-            const newBook = new Book(args);
-            return await newBook.save();
-        },
+        createAuthor: async (parent, args, { mongoDataMethods }) =>
+            await mongoDataMethods.createAuthor(args),
+        createBook: async (parent, args, { mongoDataMethods }) =>
+            await mongoDataMethods.createBook(args),
     },
 };
 
