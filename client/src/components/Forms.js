@@ -3,8 +3,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import { useQuery } from '@apollo/client';
-import { getAuthors } from '../apollo-client/queries';
+import { useQuery, useMutation } from '@apollo/client';
+import { getAuthors, getBooks } from '../apollo-client/queries';
+import { addSingleBook } from '../apollo-client/mutation';
 
 const Forms = () => {
     const [newBook, setNewBook] = useState({
@@ -24,11 +25,15 @@ const Forms = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        console.log(newBook);
+        addBook({
+            variables: { name, genre, authorId },
+            refetchQueries: [{ query: getBooks }],
+        });
+        setNewBook({ name: '', genre: '', authorId: '' });
     };
 
-    const { loading, error, data } = useQuery(getAuthors);
-
+    const { loading, data } = useQuery(getAuthors);
+    const [addBook, dataMutation] = useMutation(addSingleBook);
     return (
         <Row>
             <Col>
